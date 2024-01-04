@@ -19,7 +19,6 @@ nodeGroups:
       instanceTypes: ["t3.medium", "t3a.medium"]
       onDemandPercentageAboveBaseCapacity: 0
     labels: { lifecycle: Ec2Spot }
-    iam:
-      instanceProfileARN: "arn:aws:iam::682597602138:instance-profile/eksctl-eks-acg-nodegroup-eks-node-group-spot-instances-NodeInstanceProfile-jM2IX5Lf24ne"
+   spotAllocationStrategy: "lowest-price"
 
 availabilityZones: ["us-east-1a", "us-east-1b", "us-east-1c"] # This is required since in us-east-1 only 2 subnets are created by default (https://eksctl.io/usage/vpc-networking/)
